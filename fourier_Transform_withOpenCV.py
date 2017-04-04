@@ -11,7 +11,7 @@ import cv2
 from matplotlib import pyplot as plt
 
 
-img = cv2.imread('landscape.jpg',0)
+img = cv2.imread('image.jpg',0)
 dft = cv2.dft(np.float32(img),flags = cv2.DFT_COMPLEX_OUTPUT)
 
 dft_shift = np.fft.fftshift(dft)
@@ -37,5 +37,5 @@ img_back = cv2.magnitude(img_back[:,:,0],img_back[:,:,1])
 plt.subplot(121),plt.imshow(img, cmap = 'gray')
 plt.title('Input Image'), plt.xticks([]), plt.yticks([])
 plt.subplot(122),plt.imshow(img_back, cmap = 'gray')
-plt.title('FT'), plt.xticks([]), plt.yticks([])
+plt.title('Magnitude Spectrum'), plt.xticks([]), plt.yticks([])
 plt.show()
